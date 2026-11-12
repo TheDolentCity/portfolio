@@ -1,7 +1,7 @@
 const PI2: number = Math.PI * 2;
-const MinRadius: number = 100;
+const MinRadius: number = 300;
 const MaxRadius: number = 600;
-const VelocityModifier: number = 4;
+const VelocityModifier: number = 3;
 const PageHeightInPixels: number = 1056;
 
 export type RGB = { r: number; g: number; b: number };

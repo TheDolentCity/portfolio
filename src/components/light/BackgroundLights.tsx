@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { useCanvas } from './useCanvas'
-import Light from './Light'
+import { useState } from 'react';
+import { useCanvas } from './useCanvas';
+import Light from './Light';
 
 export default function BackgroundLights() {
-  const { canvasRef, clear } = useCanvas(createLights, animate)
-  const [lights, setLights] = useState<Array<Light>>([])
+  const { canvasRef, clear } = useCanvas(createLights, animate);
+  const [lights, setLights] = useState<Array<Light>>([]);
 
   function createLights(
     canvas: HTMLCanvasElement,
@@ -21,17 +21,27 @@ export default function BackgroundLights() {
         g: 128,
         b: 255,
       }),
-    ])
+      new Light(canvas?.width, canvas?.height, context, {
+        r: 128,
+        g: 255,
+        b: 128,
+      }),
+      new Light(canvas?.width, canvas?.height, context, {
+        r: 0,
+        g: 128,
+        b: 255,
+      }),
+    ]);
   }
 
   function animate(
     canvas: HTMLCanvasElement,
     context: CanvasRenderingContext2D,
   ) {
-    clear()
+    clear();
     for (let i = 0; i < lights.length; i++) {
-      const light = lights[i]
-      light?.animate(context)
+      const light = lights[i];
+      light?.animate(context);
     }
   }
 
@@ -39,5 +49,5 @@ export default function BackgroundLights() {
     <div className="print:hidden fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
-  )
+  );
 }

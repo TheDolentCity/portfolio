@@ -1,8 +1,8 @@
 export default function SectionItem({
-  href = null,
+  href,
   children,
 }: {
-  href: string | null;
+  href?: string | undefined;
   children: React.ReactNode;
 }) {
   if (href) {
