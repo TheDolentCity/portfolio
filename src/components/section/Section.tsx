@@ -7,5 +7,5 @@ export default function Section({
 }) {
   const css = className ?? '';
 
-  return <div className={`overflow-y-auto ${css}`}>{children}</div>;
+  return <div className={`${css}`}>{children}</div>;
 }
