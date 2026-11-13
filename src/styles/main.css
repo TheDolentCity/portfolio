@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @view-transition {
+@view-transition {
   navigation: auto;
-} */
+}
 
 @layer base {
   :root {
