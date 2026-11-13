@@ -9,17 +9,23 @@ export default function SectionItem({
   small?: boolean | undefined;
   children: React.ReactNode;
 }) {
+  function onClick() {
+    if (href) {
+      window.location.href = href;
+    }
+  }
+
   const css = cn(
     'p-2 rounded-xl',
-    href ? 'action-border' : 'border-2 border-transparent',
+    href ? 'action-border cursor-pointer' : 'border-2 border-transparent',
     small ? 'text-xs' : 'text-sm',
   );
 
   if (href) {
     return (
-      <a href={href} className={css}>
+      <div onClick={onClick} className={css}>
         {children}
-      </a>
+      </div>
     );
   } else {
     return <div className={css}>{children}</div>;

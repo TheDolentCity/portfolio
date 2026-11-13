@@ -27,51 +27,46 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
     <div
       class="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white"
     >
-      <div class="flex w-full px-2 pb-6 justify-between">
-        <h1 class="text-3xl pr-4 tracking-tighter font-bold text-focus">
+      <div
+        class="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-8 justify-between items-end"
+      >
+        <h1 class="grow pb-2 text-5xl tracking-tighter font-bold text-focus">
           Dante Nardo
         </h1>
-        <div class="flex flex-col gap-0.5">
-          <ContactLink href="https://github.com/TheDolentCity">
-            <ContactLinkIcon>
-              <Github class="w-4 h-4" />
-            </ContactLinkIcon>
-            <ContactLinkText>TheDolentCity</ContactLinkText>
-          </ContactLink>
-          <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
-            <ContactLinkIcon>
-              <Linkedin class="w-4 h-4" />
-            </ContactLinkIcon>
-            <ContactLinkText>dante-nardo</ContactLinkText>
-          </ContactLink>
+        <div
+          class="shrink flex flex-col sm:flex-row print:flex-row h-min gap-0.5"
+        >
+          <div class="flex flex-col gap-0.5">
+            <ContactLink href="https://github.com/TheDolentCity">
+              <ContactLinkIcon>
+                <Github class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>TheDolentCity</ContactLinkText>
+            </ContactLink>
+            <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
+              <ContactLinkIcon>
+                <Linkedin class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>dante-nardo</ContactLinkText>
+            </ContactLink>
+          </div>
+          <div class="flex flex-col gap-1">
+            <ContactLink
+              href="https://www.google.com/maps/place/Rochester,+NY/@43.1489024,-77.7650176,13z/data=!4m6!3m5!1s0x89d6b3059614b353:0x5a001ffc4125e61e!8m2!3d43.1565779!4d-77.6088465!16zL20vMHkxcmY?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+            >
+              <ContactLinkIcon>
+                <Globe class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>Rochester, NY</ContactLinkText>
+            </ContactLink>
+            <ContactLink href="https://dantenardo.com">
+              <ContactLinkIcon>
+                <AppWindow class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>https://dantenardo.com</ContactLinkText>
+            </ContactLink>
+          </div>
         </div>
-        <div class="flex flex-col gap-0.5">
-          <ContactLink
-            href="https://www.google.com/maps/place/San+Diego,+CA/@32.8242405,-117.3891468,10z/data=!3m1!4b1!4m6!3m5!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838!16zL20vMDcxdnI"
-          >
-            <ContactLinkIcon>
-              <Globe class="w-4 h-4" />
-            </ContactLinkIcon>
-            <ContactLinkText>Rochester, NY</ContactLinkText>
-          </ContactLink>
-          <ContactLink href="https://dantenardo.dev">
-            <ContactLinkIcon>
-              <AppWindow class="w-4 h-4" />
-            </ContactLinkIcon>
-            <ContactLinkText>https://dantenardo.com</ContactLinkText>
-          </ContactLink>
-        </div>
-        <SectionItem href="/education">
-          <SectionItemHeaderHorizontal>
-            <SectionItemHeader>
-              B.S. Game Design & Development
-            </SectionItemHeader>
-            <SectionItemDate>Dec 2018</SectionItemDate>
-          </SectionItemHeaderHorizontal>
-          <SectionItemParagraph>
-            Rochester Institute of Technology
-          </SectionItemParagraph>
-        </SectionItem>
       </div>
       <Section>
         <SectionHeader className="mt-6 md:mt-0 print:mt-0">
@@ -79,7 +74,7 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
         </SectionHeader>
         <SectionSeparator />
         <SectionBody>
-          <SectionItem href="/work/cloud-platform">
+          <SectionItem href="/work/cloud-platform" client:load>
             <SectionItemHeaderHorizontal>
               <SectionItemHeader>Senior Software Engineer</SectionItemHeader>
               <SectionItemSubtitle>at Biosero Inc.</SectionItemSubtitle>
@@ -128,7 +123,7 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
               </SectionItemListItem> -->
             </SectionItemList>
           </SectionItem>
-          <SectionItem href="/work/viasat-outages">
+          <SectionItem href="/work/viasat-outages" client:load>
             <SectionItemHeaderHorizontal>
               <SectionItemHeader>Software Engineer</SectionItemHeader>
               <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
@@ -175,7 +170,7 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
           <SectionHeader>Education</SectionHeader>
           <SectionSeparator />
           <SectionBody>
-            <SectionItem href="/education">
+            <SectionItem href="/education" client:load>
               <SectionItemHeaderHorizontal>
                 <SectionItemHeader>
                   B.S. Game Design & Development
@@ -190,43 +185,42 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
           <SectionHeader className="mt-6">Projects</SectionHeader>
           <SectionSeparator />
           <SectionBody>
-            <SectionItem href="/projects/cerberus">
+            <SectionItem href="/projects/cerberus" client:load>
               <SectionItemHeaderHorizontal>
                 <SectionItemHeader>Cerberus</SectionItemHeader>
                 <SectionItemSubtitle>
-                  a serverless microservice built with Deno
+                  a serverless microservice
                 </SectionItemSubtitle>
                 <SectionItemDate>2023</SectionItemDate>
               </SectionItemHeaderHorizontal>
               <SectionItemParagraph>
-                Serverless Deno "watchdog" for RSS/ATOM/JSON feeds that pushes
-                new entries to a discord server.
+                Serverless "watchdog" for RSS/ATOM/JSON feeds that pushes new
+                entries to a discord server. Built with Deno, Redis, and QStash.
               </SectionItemParagraph>
             </SectionItem>
-            <SectionItem href="/projects/protean">
+            <SectionItem href="/projects/protean" client:load>
               <SectionItemHeaderHorizontal>
                 <SectionItemHeader>Protean RPG</SectionItemHeader>
                 <SectionItemSubtitle>
-                  a realtime Sveltekit web app
+                  a realtime messaging application
                 </SectionItemSubtitle>
                 <SectionItemDate>2022 - 2023</SectionItemDate>
               </SectionItemHeaderHorizontal>
               <SectionItemParagraph>
-                Users can create rooms, join rooms, and send messages in
-                realtime with other users via web sockets.
+                Users create rooms where they can send markdown messages in
+                realtime with other users via web sockets. Built with Sveltekit
+                and Node.
               </SectionItemParagraph>
             </SectionItem>
-            <SectionItem href="/projects/portfolio">
+            <SectionItem href="/projects/portfolio" client:load>
               <SectionItemHeaderHorizontal>
                 <SectionItemHeader>Portfolio</SectionItemHeader>
-                <SectionItemSubtitle>
-                  a website built with Astro and React
-                </SectionItemSubtitle>
+                <SectionItemSubtitle>a static website</SectionItemSubtitle>
                 <SectionItemDate>2023 - 2026</SectionItemDate>
               </SectionItemHeaderHorizontal>
               <SectionItemParagraph>
                 A high performance website with an interactive resume, MDX
-                content, animations, and almost zero JavaScript.
+                content, and canvas animations. Built with Astro and React.
               </SectionItemParagraph>
             </SectionItem>
             <!-- <SectionItem href="/projects/project-colorblind">
@@ -258,7 +252,7 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
             <SectionItem>
               <SectionItemHeader>Programming</SectionItemHeader>
               <SectionItemParagraph small>
-                TypeScript, C#, C++, Java, JavaScript, Python, Lua
+                TypeScript, C#, C++, Java, Python, Lua, JavaScript
               </SectionItemParagraph>
             </SectionItem>
             <SectionItem>
@@ -271,86 +265,19 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
             <SectionItem>
               <SectionItemHeader>Backend</SectionItemHeader>
               <SectionItemParagraph small>
-                REST, gRPC, SQL, NoSQL, Node, .NET, ASP.NET Core, Docker,
-                Terraform, Kafka, AWS, KMS, SQS, S3, Lambda, DynamoDB, Azure,
-                Cosmos DB, CI/CD
+                REST, gRPC, SQL, NoSQL, Node, .NET, ASP.NET, Docker, Terraform,
+                Kafka, AWS, KMS, SQS, S3, Lambda, DynamoDB, Azure, Cosmos DB,
+                CI/CD
               </SectionItemParagraph>
             </SectionItem>
             <SectionItem>
               <SectionItemHeader>Architecture</SectionItemHeader>
               <SectionItemParagraph small>
-                OOP, Microservices, Distributed Systems, Event Sourcing, CQRS,
-                Monolith, Serverless Functions
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Productivity</SectionItemHeader>
-              <SectionItemParagraph small>
-                Git, Perforce, Scrum, Kanban, Jira, GitHub, CI/CD
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Graphics & Design</SectionItemHeader>
-              <SectionItemParagraph small>
-                OpenGL, WebGL, Unity 3D, Adobe Suite, Affinity Serif Suite
+                Microservices, Distributed Systems, Event Sourcing, CQRS,
+                Monolith, Serverless Functions, OOP, Functional Programming
               </SectionItemParagraph>
             </SectionItem>
           </SectionBody>
-          <!-- <SectionBody
-            className="grid grid-cols-1 sm:grid-cols-2 md:flex print:flex"
-          >
-            <SectionItem>
-              <SectionItemHeader>Programming</SectionItemHeader>
-              <SectionItemParagraph>
-                TypeScript, C#, C++, C, Java, JavaScript, Python, Lua
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Backend</SectionItemHeader>
-              <SectionItemParagraph>
-                REST, gRPC, SQL, NoSQL, Node, .NET, ASP.NET Core, Deno
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Frontend</SectionItemHeader>
-              <SectionItemParagraph>
-                React, Next.js, Blazor, Svelte, Sveltekit, Angular, HTML, CSS,
-                SCSS, Tailwind CSS, PostCSS, Vite, Webpack
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Cloud</SectionItemHeader>
-              <SectionItemParagraph>
-                Kubernetes, Docker, Apache Kafka, AWS, AWS KMS, AWS SQS, AWS S3,
-                AWS Lambda, DynamoDB, Azure, Cosmos DB, Azure Functions, Key
-                Vault
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Architecture</SectionItemHeader>
-              <SectionItemParagraph>
-                OOP, Microservices, Distributed Systems, Event Sourcing, CQRS
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Operating Systems</SectionItemHeader>
-              <SectionItemParagraph>
-                Windows, Mac OS, Linux, BASH, WSL, Powershell
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Productivity</SectionItemHeader>
-              <SectionItemParagraph>
-                Git, Perforce, Scrum, Kanban, Jira, GitHub, CI/CD
-              </SectionItemParagraph>
-            </SectionItem>
-            <SectionItem>
-              <SectionItemHeader>Graphics & Design</SectionItemHeader>
-              <SectionItemParagraph>
-                OpenGL, WebGL, Unity 3D, Adobe Suite, Affinity Serif Suite
-              </SectionItemParagraph>
-            </SectionItem>
-          </SectionBody> -->
         </Section>
       </div>
     </div>
