@@ -1,7 +1,7 @@
 export default function ContactLinkText({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <span className="text-sm">{children}</span>
+  return <span className="text-xs whitespace-nowrap">{children}</span>;
 }

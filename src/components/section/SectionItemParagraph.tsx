@@ -1,7 +1,9 @@
 export default function SectionItemParagraph({
+  small,
   children,
 }: {
-  children: React.ReactNode
+  small?: boolean | undefined;
+  children: React.ReactNode;
 }) {
-  return <p className="text-sm">{children}</p>
+  return <p className={small ? 'text-xs' : ''}>{children}</p>;
 }

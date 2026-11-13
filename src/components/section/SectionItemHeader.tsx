@@ -1,11 +1,11 @@
 export default function SectionItemHeader({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <h3 className="flex gap-2 items-end text-base font-semibold tracking-tight text-focus">
+    <h3 className="flex gap-2 items-end whitespace-nowrap font-semibold tracking-tight text-focus">
       {children}
     </h3>
-  )
+  );
 }

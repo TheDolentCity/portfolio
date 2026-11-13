@@ -12,7 +12,7 @@ export default function ResumeButton() {
         <span className="text-sm font-medium">Resume</span>
       </a>
       <a
-        href="/resume-dante-nardo.pdf"
+        href="/dante-nardo-resume.pdf"
         title="Download resume"
         download
         className="flex items-center justify-center rounded-r px-3 bg-white hover:bg-base-300 active:bg-base-400 mst"
