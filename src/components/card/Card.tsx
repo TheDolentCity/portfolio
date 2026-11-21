@@ -10,7 +10,7 @@ export default function Card({
   return (
     <a
       href={href}
-      className="relative p-4 rounded border border-base-800 bg-black hover:border-theme-700 hover:bg-theme-700/10 mst"
+      className="relative p-4 rounded border border-zinc-800 bg-black hover:border-blue-700 hover:bg-blue-700/10 mst"
     >
       {children}
     </a>

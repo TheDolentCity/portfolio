@@ -18,7 +18,7 @@ type Props = MarkdownLayoutProps<{
   description: string;
 }>;
 
-const { frontmatter, url } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -40,6 +40,4 @@ const { frontmatter, url } = Astro.props;
       </Article>
     </Main>
   </Body>
-
-
 </html>

@@ -3,5 +3,5 @@ export default function SectionItemHeaderHorizontal({
 }: {
   children: React.ReactNode
 }) {
-  return <div className="flex gap-2 mb-1 items-end">{children}</div>
+  return <div className="flex gap-2 mb-1 items-end overflow-x-hidden min-w-0 max-w-full">{children}</div>
 }

@@ -1,75 +1,79 @@
 ---
-import Layout from '../layouts/MainLayout.astro';
-import BackgroundLights from '../components/light/BackgroundLights';
-import ContactLink from '../components/contact/ContactLink';
-import ContactLinkIcon from '../components/contact/ContactLinkIcon';
-import ContactLinkText from '../components/contact/ContactLinkText';
-import Section from '../components/section/Section';
-import SectionBody from '../components/section/SectionBody';
-import SectionHeader from '../components/section/SectionHeader';
-import SectionItem from '../components/section/SectionItem';
-import SectionItemDate from '../components/section/SectionItemDate';
-import SectionItemHeader from '../components/section/SectionItemHeader';
-import SectionItemHeaderHorizontal from '../components/section/SectionItemHeaderHorizontal';
-import SectionItemList from '../components/section/SectionItemList';
-import SectionItemListItem from '../components/section/SectionItemListItem';
-import SectionItemParagraph from '../components/section/SectionItemParagraph';
-import SectionItemSubtitle from '../components/section/SectionItemSubtitle';
-import SectionSeparator from '../components/section/SectionSeparator';
-import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
+import Github from '@/components/icons/Github.astro';
+import LinkedIn from '@/components/icons/LinkedIn.astro';
+import { AppWindow, Globe } from '@lucide/astro';
+import ContactLink from '@/components/contact/ContactLink';
+import ContactLinkIcon from '@/components/contact/ContactLinkIcon';
+import ContactLinkText from '@/components/contact/ContactLinkText';
+import BackgroundLights from '@/components/light/BackgroundLights';
+import Section from '@/components/section/Section';
+import SectionBody from '@/components/section/SectionBody';
+import SectionHeader from '@/components/section/SectionHeader';
+import SectionItem from '@/components/section/SectionItem';
+import SectionItemDate from '@/components/section/SectionItemDate';
+import SectionItemHeader from '@/components/section/SectionItemHeader';
+import SectionItemHeaderHorizontal from '@/components/section/SectionItemHeaderHorizontal';
+import SectionItemList from '@/components/section/SectionItemList';
+import SectionItemListItem from '@/components/section/SectionItemListItem';
+import SectionItemParagraph from '@/components/section/SectionItemParagraph';
+import SectionItemSubtitle from '@/components/section/SectionItemSubtitle';
+import SectionSeparator from '@/components/section/SectionSeparator';
+import Layout from '@/layouts/MainLayout.astro';
 ---
 
 <Layout title="Dante | Resume">
   <div
-    class="relative md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] mx-auto print:m-0"
+    class="relative lg:w-[816px] lg:h-[1056px] print:w-[816px] print:h-[1056px] mx-auto print:m-0"
   >
     <BackgroundLights client:only="react" />
     <div
-      class="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white"
+      class="flex flex-col w-full h-full overflow-hidden px-8 py-6 rounded print:border-0 border border-zinc-700 bg-linear-to-b from-zinc-900 via-zinc-950 to-zinc-950/50 backdrop-blur-xl print:from-white print:to-white"
     >
       <div
-        class="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-8 justify-between items-end"
+        class="flex flex-col lg:flex-row print:flex-row w-full gap-2 lg:gap-8 print:gap-8 px-2 pb-8 justify-between lg:items-end print:items-end"
       >
-        <h1 class="grow pb-2 text-5xl tracking-tighter font-bold text-focus">
+        <h1
+          class="grow pb-6 lg:pb-2 print:pb-2 text-5xl tracking-tighter font-bold text-focus"
+        >
           Dante Nardo
         </h1>
         <div
-          class="shrink flex flex-col sm:flex-row print:flex-row h-min gap-0.5"
+          class="flex flex-wrap lg:flex-nowrap lg:flex-col print:flex-col gap-0.5"
         >
-          <div class="flex flex-col gap-0.5">
-            <ContactLink href="https://github.com/TheDolentCity">
-              <ContactLinkIcon>
-                <Github class="w-4 h-4" />
-              </ContactLinkIcon>
-              <ContactLinkText>TheDolentCity</ContactLinkText>
-            </ContactLink>
-            <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
-              <ContactLinkIcon>
-                <Linkedin class="w-4 h-4" />
-              </ContactLinkIcon>
-              <ContactLinkText>dante-nardo</ContactLinkText>
-            </ContactLink>
-          </div>
-          <div class="flex flex-col gap-1">
-            <ContactLink
-              href="https://www.google.com/maps/place/Rochester,+NY/@43.1489024,-77.7650176,13z/data=!4m6!3m5!1s0x89d6b3059614b353:0x5a001ffc4125e61e!8m2!3d43.1565779!4d-77.6088465!16zL20vMHkxcmY?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
-            >
-              <ContactLinkIcon>
-                <Globe class="w-4 h-4" />
-              </ContactLinkIcon>
-              <ContactLinkText>Rochester, NY</ContactLinkText>
-            </ContactLink>
-            <ContactLink href="https://dantenardo.com">
-              <ContactLinkIcon>
-                <AppWindow class="w-4 h-4" />
-              </ContactLinkIcon>
-              <ContactLinkText>https://dantenardo.com</ContactLinkText>
-            </ContactLink>
-          </div>
+          <ContactLink href="https://github.com/TheDolentCity">
+            <ContactLinkIcon>
+              <Github />
+            </ContactLinkIcon>
+            <ContactLinkText>TheDolentCity</ContactLinkText>
+          </ContactLink>
+          <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
+            <ContactLinkIcon>
+              <LinkedIn />
+            </ContactLinkIcon>
+            <ContactLinkText>dante-nardo</ContactLinkText>
+          </ContactLink>
+        </div>
+        <div
+          class="flex flex-row flex-wrap lg:flex-nowrap lg:flex-col print:flex-col gap-1"
+        >
+          <ContactLink
+            href="https://www.google.com/maps/place/Rochester,+NY/@43.1489024,-77.7650176,13z/data=!4m6!3m5!1s0x89d6b3059614b353:0x5a001ffc4125e61e!8m2!3d43.1565779!4d-77.6088465!16zL20vMHkxcmY?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D"
+          >
+            <ContactLinkIcon>
+              <Globe class="w-4 h-4" />
+            </ContactLinkIcon>
+            <ContactLinkText>Rochester, NY</ContactLinkText>
+          </ContactLink>
+          <ContactLink href="https://dantenardo.com">
+            <ContactLinkIcon>
+              <AppWindow class="w-4 h-4" />
+            </ContactLinkIcon>
+            <ContactLinkText>https://dantenardo.com</ContactLinkText>
+          </ContactLink>
         </div>
       </div>
       <Section>
-        <SectionHeader className="mt-6 md:mt-0 print:mt-0">
+        <SectionHeader className="mt-6 lg:mt-0 print:mt-0">
           Experience
         </SectionHeader>
         <SectionSeparator />
@@ -142,7 +146,9 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
         </SectionBody>
       </Section>
 
-      <div class="grid md:grid-cols-3 gap-4 mt-6 overflow-hidden">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-3 print:grid-cols-3 gap-4 mt-6 overflow-hidden"
+      >
         <Section className="col-span-2">
           <SectionHeader>Education</SectionHeader>
           <SectionSeparator />
@@ -159,7 +165,7 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
               </SectionItemParagraph>
             </SectionItem>
           </SectionBody>
-          <SectionHeader className="mt-6">Projects</SectionHeader>
+          <SectionHeader className="mt-4">Projects</SectionHeader>
           <SectionSeparator />
           <SectionBody>
             <SectionItem href="/projects/cerberus" client:load>
@@ -203,7 +209,9 @@ import { AppWindow, Linkedin, Github, Globe } from 'lucide-astro';
           </SectionBody>
         </Section>
         <Section>
-          <SectionHeader>Skills</SectionHeader>
+          <SectionHeader className="mt-4 lg:mt-0 print:mt-0">
+            Skills
+          </SectionHeader>
           <SectionSeparator />
           <SectionBody>
             <SectionItem>

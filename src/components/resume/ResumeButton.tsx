@@ -6,7 +6,7 @@ export default function ResumeButton() {
       <a
         href="/"
         title="Interactive resume"
-        className="flex gap-2 px-3 py-2 items-center rounded-l bg-white hover:bg-base-300 active:bg-base-400 mst"
+        className="flex gap-2 px-3 py-2 items-center rounded-l bg-white hover:bg-zinc-300 active:bg-zinc-400 mst"
       >
         <FileText className="w-4 h-4" />
         <span className="text-sm font-medium">Resume</span>
@@ -15,7 +15,7 @@ export default function ResumeButton() {
         href="/dante-nardo-resume.pdf"
         title="Download resume"
         download
-        className="flex items-center justify-center rounded-r px-3 bg-white hover:bg-base-300 active:bg-base-400 mst"
+        className="flex items-center justify-center rounded-r px-3 bg-white hover:bg-zinc-300 active:bg-zinc-400 mst"
       >
         <Download className="w-4 h-4" />
       </a>

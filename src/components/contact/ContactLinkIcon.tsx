@@ -3,5 +3,5 @@ export default function ContactLinkIcon({
 }: {
   children: React.ReactNode
 }) {
-  return <span className="text-base text-focus">{children}</span>
+  return <span className="text-base text-(--color-focus) print:text-black">{children}</span>
 }
